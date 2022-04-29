@@ -6,8 +6,7 @@ Bonus
 Far comparire gli indirizzi email solamente quando sono stati tutti generati.
 */
 
-
-const app = new Vue ({
+const app = new Vue({
     el: '#app',
 
     data: {
@@ -20,22 +19,22 @@ const app = new Vue ({
     methods: {},
 
     mounted() {
-        
+
         // Ciclo per generare 10 mail
         for (let index = 0; index < 10; index++) {
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(response => {
-                // console.log(this);
-                // console.log(response);
-                this.email = response.data.response 
-                this.emails.push(this.email) // "Pusho" all'interno dell'array emails le singole mail
-            })
-            
+                .then(response => {
+                    // console.log(this);
+                    // console.log(response);
+                    this.email = response.data.response
+                    this.emails.push(this.email) // "Pusho" all'interno dell'array emails le singole mail
+                })
+
             // console.log(this.emails);
         }
-        
-         
-     }
-            
-           
-}) 
+
+
+    }
+
+
+})
